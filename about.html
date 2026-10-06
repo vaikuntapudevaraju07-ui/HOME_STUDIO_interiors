@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'inverse-surface': '#31312c', 'inverse-primary': '#cbc5c0', 'secondary-container': '#ffba92', 'on-secondary': '#ffffff', 'primary-fixed': '#e7e1dc', 'error': '#ba1a1a', 'tertiary-fixed': '#ffdcc7', 'on-tertiary': '#ffffff', 'on-tertiary-fixed': '#311300', 'surface-variant': '#e5e2db', 'surface-dim': '#dcdad3', 'on-secondary-container': '#7a4828', 'surface-container-low': '#f6f3ec', 'on-secondary-fixed-variant': '#6a3b1c', 'on-tertiary-container': '#ae7853', 'on-primary': '#ffffff', 'surface-container-highest': '#e5e2db', 'on-error-container': '#93000a', 'tertiary': '#000000', 'secondary-fixed': '#ffdbc8', 'surface-container-high': '#ebe8e1', 'surface-bright': '#fcf9f2', 'surface-container': '#f1eee7', 'on-error': '#ffffff', 'on-primary-container': '#87837f', 'on-primary-fixed': '#1d1b18', 'outline-variant': '#cdc5bc', 'on-surface': '#1c1c18', 'primary-container': '#1d1b18', 'on-background': '#1c1c18', 'outline': '#7c766e', 'background': '#fcf9f2', 'secondary-fixed-dim': '#fcb78f', 'error-container': '#ffdad6', 'on-secondary-fixed': '#321200', 'primary': '#000000', 'surface-container-lowest': '#ffffff', 'surface': '#fcf9f2', 'tertiary-fixed-dim': '#f8b990', 'on-surface-variant': '#4b463f', 'primary-fixed-dim': '#cbc5c0', 'surface-tint': '#615e5a', 'on-primary-fixed-variant': '#494643', 'tertiary-container': '#311300', 'on-tertiary-fixed-variant': '#673c1d', 'secondary': '#865231', 'inverse-on-surface': '#f3f0e9' }, borderRadius: { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, spacing: { 'margin-tablet': '2.5rem', 'gutter-mobile': '1rem', 'gutter': '2rem', 'margin': '4rem', 'space-sm': '0.75rem', 'space-xl': '3.5rem', 'space-md': '1.25rem', 'space-lg': '2rem', 'margin-mobile': '1.25rem', 'space-xs': '0.375rem' }, fontFamily: { 'headline-lg-mobile': ['Playfair Display'], 'title-md': ['Plus Jakarta Sans'], 'headline-md': ['Playfair Display'], 'body-lg': ['Plus Jakarta Sans'], 'display-lg': ['Playfair Display'], 'title-lg': ['Plus Jakarta Sans'], 'display-md-mobile': ['Playfair Display'], 'display-lg-mobile': ['Playfair Display'], 'label-md': ['Plus Jakarta Sans'], 'body-md': ['Plus Jakarta Sans'], 'label-sm': ['Plus Jakarta Sans'], 'headline-lg': ['Playfair Display'], 'display-md': ['Playfair Display'] }, fontSize: { 'headline-lg-mobile': ['26px', { lineHeight: '34px', letterSpacing: '0em', fontWeight: '400' }], 'title-md': ['18px', { lineHeight: '26px', letterSpacing: '0em', fontWeight: '500' }], 'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0em', fontWeight: '500' }], 'body-lg': ['16px', { lineHeight: '26px', letterSpacing: '0.01em', fontWeight: '400' }], 'display-lg': ['64px', { lineHeight: '72px', letterSpacing: '-0.02em', fontWeight: '400' }], 'title-lg': ['20px', { lineHeight: '28px', letterSpacing: '-0.01em', fontWeight: '600' }], 'display-md-mobile': ['32px', { lineHeight: '40px', letterSpacing: '-0.01em', fontWeight: '400' }], 'display-lg-mobile': ['40px', { lineHeight: '48px', letterSpacing: '-0.01em', fontWeight: '400' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.06em', fontWeight: '600' }], 'body-md': ['14px', { lineHeight: '22px', letterSpacing: '0.01em', fontWeight: '400' }], 'label-sm': ['10px', { lineHeight: '14px', letterSpacing: '0.08em', fontWeight: '600' }], 'headline-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.01em', fontWeight: '400' }], 'display-md': ['48px', { lineHeight: '56px', letterSpacing: '-0.015em', fontWeight: '400' }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><button aria-label="Open Studio Menu" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="document.getElementById('mobile-drawer').classList.remove('translate-x-full')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button><img alt="Home Studio Architectural Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W17-XccE24q7oJ2TVNLRjBOR8iizYyMey5uQaDyLw064hTSSHqZfnA0s0KvyzPIz-lxpFr5fnM2oAvANiV1VzJSA8KgL1g7FK8L9HOhAGV3gHWEkrtOclqG6WzM3p3vDE7O0qkf6CiDIHVcB0wDiOJRykK-odxgGAfp8o9pndNAF5e10L61WB_NK4YH01gI_QgaklZpGd4W1GbJHlDT1su_C11xn6coPblbRfUi_2DLwgdh4A6h-_zEL5K"/><span class="font-headline-md text-headline-md tracking-tight text-on-surface ml-1 hidden min-[360px]:inline-block">Home Studio</span></div><div class="flex items-center gap-2"><a class="h-10 px-3.5 rounded-full bg-secondary text-on-secondary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center hover:opacity-95 active:scale-95 transition-all shadow-[0_2px_10px_rgba(134,82,49,0.25)]" data-path="contact" href="contact.html">Get Quote</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><div class="fixed inset-0 z-50 translate-x-full transition-transform duration-300 ease-in-out" id="mobile-drawer"><div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"></div><div class="absolute right-0 top-0 bottom-0 w-5/6 max-w-sm bg-surface-bright pt-safe pb-safe shadow-[0_20px_40px_-8px_rgba(28,26,23,0.15)] flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><span class="font-headline-md text-headline-md text-on-surface">Navigation</span><button class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')" type="button"><span class="material-symbols-outlined text-[24px]">close</span></button></div><div class="px-space-md py-space-sm flex-1 overflow-y-auto flex flex-col gap-space-xs"><a class="flex items-center justify-between py-space-sm px-space-xs text-on-surface hover:text-secondary group transition-colors" data-path="home" href="index.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="font-headline-md text-headline-md">Home</span><span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span></a><a class="flex items-center justify-between py-space-sm px-space-xs text-on-surface hover:text-secondary group transition-colors" data-path="about" href="about.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="font-headline-md text-headline-md">About</span><span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span></a><a class="flex items-center justify-between py-space-sm px-space-xs text-on-surface hover:text-secondary group transition-colors" data-path="services" href="service.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="font-headline-md text-headline-md">Services</span><span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span></a><a class="flex items-center justify-between py-space-sm px-space-xs text-on-surface hover:text-secondary group transition-colors" data-path="projects" href="project.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="font-headline-md text-headline-md">Projects</span><span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span></a><a class="flex items-center justify-between py-space-sm px-space-xs text-on-surface hover:text-secondary group transition-colors" data-path="contact" href="contact.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="font-headline-md text-headline-md">Contact</span><span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span></a><div class="mt-space-md pt-space-md"><a class="w-full h-12 rounded-full bg-secondary text-on-secondary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-space-xs hover:opacity-95 shadow-md" data-path="contact" href="contact.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="material-symbols-outlined text-[20px]">request_quote</span><span>Get a Quote</span></a></div></div><div class="p-space-md bg-surface-container-low"><p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-1">Inquiries</p><p class="font-body-md text-body-md text-on-surface font-medium">studio@homestudio.design</p><p class="font-body-md text-body-md text-on-surface-variant">+1 (800) 248-7883</p></div></div></div><main class="flex flex-col relative w-full pt-16 bg-surface flex-1"><div class="sr-only">About Us</div><div class="flex flex-col w-full">
+<!-- Editorial Header Banner -->
+<section class="px-margin-mobile pt-6 pb-4 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Studio Overview &amp; Philosophy</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">About Home Studio</h1>
+<p class="font-body-md text-body-md text-secondary italic">Where Architecture Meets the Art of Quiet Living</p>
+</section>
+<!-- Studio Atelier Image + Intro Narrative -->
+<section class="px-margin-mobile py-4 flex flex-col gap-4">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="An expansive Japanese-Scandinavian architectural design atelier bathed in soft morning daylight. Weathered white oak drafting tables display rolled blueprints, fluted travertine stone swatches, textured Belgian linen samples, and delicate ceramic vessels. High ceilings with industrial steel frames softly filter sunlight onto architects working attentively in the background, exuding tranquil luxury and artisanal dedication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRN3FOJWXYOSLKf4HAT5KjZAgQFIsmD6x-Yi_53THd-so5YofbX1Wbj36gOoni5W3COCgAvXsB5TI0ZFh5YRZA0mw_X_XKSayWAlo_NFkgxuPu9MLkKJE0F_w4eVH7pdeWF4R_1TDsXvBuLdztp6sOCvFEpfE04bZDxS_mm2tFYR8x18rOYY68KU3ZFyu3hTuTTlV9hBDH0KJH8MR-FdnCu4CtSb274YG2P6stgjQ5vWXfudVCAJ8EVA"/>
+<div class="absolute bottom-3 left-3 bg-surface-bright/80 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">architecture</span>
+<span class="font-label-sm text-label-sm text-on-surface tracking-wider uppercase">Tribeca Atelier No. 04</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col gap-3">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+        Founded on the belief that our physical environment deeply influences our mental equilibrium and happiness, Home Studio crafts serene, thoughtful living environments that elevate everyday life.
+      </p>
+<!-- Interactive Principle Pill Bar -->
+<div class="flex items-center gap-2 overflow-x-auto py-1">
+<span class="font-label-sm text-label-sm bg-surface px-3 py-1.5 rounded-full text-secondary whitespace-nowrap">Quiet Luxury</span>
+<span class="font-label-sm text-label-sm bg-surface px-3 py-1.5 rounded-full text-on-surface-variant whitespace-nowrap">Tactile Sincerity</span>
+<span class="font-label-sm text-label-sm bg-surface px-3 py-1.5 rounded-full text-on-surface-variant whitespace-nowrap">Biophilic Light</span>
+</div>
+<div class="pt-2 flex items-center justify-between border-t border-transparent">
+<div>
+<p class="font-title-md text-title-md text-on-surface font-semibold">Julian Vance &amp; Maya Lin</p>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Principals &amp; Founders</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Story -->
+<section class="px-margin-mobile py-6 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Our Lineage</span>
+<div class="h-px bg-surface-variant flex-1"></div>
+</div>
+<div class="bg-surface-container p-5 rounded-xl flex flex-col gap-4">
+<div class="flex items-baseline justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">Decade of Restraint</h2>
+<span class="font-label-md text-label-md text-secondary font-bold">2014 — 2025</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        From a two-person sketchbook studio in 2014 to an international team of 35 architects, interior designers, and master carpenters. Over a decade, we have remained devoted to honest materiality, uncluttered layouts, and timeless craftsmanship over fleeting trends.
+      </p>
+<!-- Quick Timeline Metrics Grid -->
+<div class="grid grid-cols-3 gap-2 pt-2">
+<div class="bg-surface-bright p-3 rounded-lg flex flex-col items-center text-center">
+<span class="font-headline-md text-headline-md text-on-surface">11</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">Years</span>
+</div>
+<div class="bg-surface-bright p-3 rounded-lg flex flex-col items-center text-center">
+<span class="font-headline-md text-headline-md text-on-surface">140+</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">Residences</span>
+</div>
+<div class="bg-surface-bright p-3 rounded-lg flex flex-col items-center text-center">
+<span class="font-headline-md text-headline-md text-on-surface">35</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">Artisans</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission & Vision Cards -->
+<section class="px-margin-mobile py-2 flex flex-col gap-3">
+<!-- Mission Card -->
+<div class="bg-primary text-on-primary p-5 rounded-xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2 text-secondary-container">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold">Our Mission</span>
+</div>
+<p class="font-body-md text-body-md leading-relaxed text-primary-fixed">
+        To craft sustainable, architectural interiors that cultivate tranquility, bring families together, and honor natural elements.
+      </p>
+</div>
+<!-- Vision Card -->
+<div class="bg-surface-container-high p-5 rounded-xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[18px]">wb_sunny</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold">Our Vision</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        To redefine modern living through warm minimalism, pioneering zero-waste bespoke joinery, and enduring design integrity.
+      </p>
+</div>
+</section>
+<!-- Design Philosophy (4 Core Pillars with architectural details) -->
+<section class="px-margin-mobile pt-8 pb-4 flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Pillars of Practice</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Design Philosophy</h2>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Creativity</h3>
+<span class="font-label-sm text-label-sm text-outline">01</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Original spatial solutions that unlock natural daylight, seamless sightlines, and sculptural simplicity.</p>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">view_quilt</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Functionality</h3>
+<span class="font-label-sm text-label-sm text-outline">02</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Intuitive flow, concealed ergonomic storage, and intelligent lighting tailored to personal habits.</p>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">handyman</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Quality</h3>
+<span class="font-label-sm text-label-sm text-outline">03</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Enduring joinery, Italian hardware, hand-applied limewash, and natural stone chosen to patina gracefully.</p>
+</div>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">person_pin_circle</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Personalization</h3>
+<span class="font-label-sm text-label-sm text-outline">04</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">No signature cookie-cutter templates. Every residence reflects its inhabitants' unique heritage and rituals.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Architectural Showcase Vignette -->
+<section class="px-margin-mobile py-4">
+<div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A serene minimalist living room bathed in gentle afternoon light with microcement flooring, floor-to-ceiling textured linen drapery, and a low-slung custom white ash timber sofa. A honed monolithic travertine low table holds an artisanal wabi-sabi ceramic vase, displaying warm neutral earth tones and quiet architectural refinement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArArtpDs28bMmpL7HFaXdAAUbPtkX8ubjktu5vhIRmThVIh9jp5FEVEICa68I2uaSKCElz3f2PP8vqWJgPLEVs_Yhzh1jIL_1MeevUH6-tnbiRmRVBVWlADB6OPszx2mB--5FPnRh-HY7KyTPqrQno5J2k7oZHgemxY9ATLfdFl9qmvplJpkLk_FGDmvw1X3sy85VaELo9dXttCC5Mg96jHTW1zSok7-MeyDhtKv-uH0MNJ0vioBHZ1Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent flex items-end p-4">
+<p class="text-on-primary font-body-md text-body-md italic">"Simplicity is not the lack of clutter, that's simply the consequence of it."</p>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="px-margin-mobile pt-6 pb-4 flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">The Atelier Distinction</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Why Choose Us</h2>
+</div>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Feature 1 -->
+<div class="bg-surface-container p-4 rounded-xl flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-medium">100% Bespoke Architectural Blueprints</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Zero repetitive floorplans; individually calibrated spaces.</span>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container p-4 rounded-xl flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-medium">Dedicated Site Architect &amp; PM</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Daily precision oversight from demolition to curtain rod.</span>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container p-4 rounded-xl flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">forest</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-medium">Direct Quarry &amp; Timber Sourcing</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Fair pricing and uncompromised prime-grade raw materials.</span>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="bg-surface-container p-4 rounded-xl flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">security</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-medium">10-Year Structural &amp; Joinery Warranty</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Unconditional studio backing on all custom millwork.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Design Process (6 Clear Step-by-Step Flow) -->
+<section class="px-margin-mobile pt-8 pb-4 flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Our Methodology</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Design Process</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A meticulous, six-stage evolution transforming initial intention into living poetry.</p>
+</div>
+<!-- Stepper Container -->
+<div class="flex flex-col gap-3 relative">
+<!-- Step 01 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex gap-3.5 items-start">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shrink-0 font-bold">
+          01
+        </div>
+<div class="flex flex-col gap-0.5">
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Consultation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Lifestyle discovery, site analysis, and spatial goals.</p>
+</div>
+</div>
+<!-- Step 02 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex gap-3.5 items-start">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center shrink-0 font-bold">
+          02
+        </div>
+<div class="flex flex-col gap-0.5">
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Planning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Zoning, flow ergonomics, 2D blueprints, and architectural layouts.</p>
+</div>
+</div>
+<!-- Step 03 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex gap-3.5 items-start">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center shrink-0 font-bold">
+          03
+        </div>
+<div class="flex flex-col gap-0.5">
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Design</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">3D photorealistic renderings, mood boards, and lighting simulations.</p>
+</div>
+</div>
+<!-- Step 04 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex gap-3.5 items-start">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center shrink-0 font-bold">
+          04
+        </div>
+<div class="flex flex-col gap-0.5">
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Material Selection</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Guided atelier visit to touch veneers, stones, and tactile fabrics.</p>
+</div>
+</div>
+<!-- Step 05 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex gap-3.5 items-start">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center shrink-0 font-bold">
+          05
+        </div>
+<div class="flex flex-col gap-0.5">
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Execution</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Civil changes, MEP integration, artisan joinery, and on-site oversight.</p>
+</div>
+</div>
+<!-- Step 06 -->
+<div class="bg-surface-container-low p-4 rounded-xl flex gap-3.5 items-start">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center shrink-0 font-bold">
+          06
+        </div>
+<div class="flex flex-col gap-0.5">
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Handover</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep clean, white-glove styling, and seamless keys-in-hand delivery.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Material Experience Peek -->
+<section class="px-margin-mobile py-4">
+<div class="bg-surface-container-high p-5 rounded-xl flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Sample Gallery</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">palette</span>
+</div>
+<p class="font-title-md text-title-md text-on-surface">Curated Natural Textures</p>
+<div class="grid grid-cols-4 gap-2 pt-1">
+<div class="aspect-square rounded-lg bg-surface-variant flex flex-col items-center justify-center p-2 text-center shadow-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">texture</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Limewash</span>
+</div>
+<div class="aspect-square rounded-lg bg-surface-variant flex flex-col items-center justify-center p-2 text-center shadow-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">crop_square</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Travertine</span>
+</div>
+<div class="aspect-square rounded-lg bg-surface-variant flex flex-col items-center justify-center p-2 text-center shadow-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">park</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Hinoki</span>
+</div>
+<div class="aspect-square rounded-lg bg-surface-variant flex flex-col items-center justify-center p-2 text-center shadow-xs">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">curtains</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Raw Linen</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action Banner Section -->
+<section class="px-margin-mobile pt-6 pb-2">
+<div class="bg-primary-container text-on-primary rounded-2xl p-6 shadow-md flex flex-col gap-4 text-center items-center">
+<div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-on-secondary mb-1">
+<span class="material-symbols-outlined text-[24px]">home_work</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary">Spatial Transformation</h2>
+<p class="font-body-md text-body-md text-primary-fixed leading-relaxed">
+          Ready to begin your spatial transformation? Schedule your atelier discovery call.
+        </p>
+</div>
+<div class="flex flex-col w-full gap-2.5 pt-2">
+<a class="w-full h-12 rounded-full bg-secondary text-on-secondary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-95 active:scale-95 transition-all shadow-sm" data-path="contact" href="contact.html">
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+<span>Book Design Consultation</span>
+</a>
+<a class="w-full h-12 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-surface-bright active:scale-95 transition-all" data-path="projects" href="project.html">
+<span class="material-symbols-outlined text-[18px]">gallery_thumbnail</span>
+<span>View Our Projects</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Micro-interaction for tactile feedback on pill selections
+  document.querySelectorAll('section .grid > div, section button').forEach(el => {
+    el.addEventListener('touchstart', () => el.classList.add('opacity-80'), { passive: true });
+    el.addEventListener('touchend', () => el.classList.remove('opacity-80'), { passive: true });
+  });
+</script><footer class="w-full bg-surface-container-low mt-space-xl px-margin-mobile pt-space-lg pb-32 text-on-surface flex flex-col gap-space-md"><div class="flex flex-col gap-space-xs"><span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Home Studio</span><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-sm">A spatial design practice converging warm Scandinavian functionalism and Japanese wabi-sabi minimalism for elevated living.</p></div><div class="grid grid-cols-2 gap-space-md py-space-sm"><div class="flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Studio Pages</span><a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" data-path="home" href="index.html">Home</a><a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" data-path="about" href="about.html">About Us</a><a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" data-path="services" href="service.html">Services</a><a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" data-path="projects" href="project.html">Projects</a><a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" data-path="contact" href="contact.html">Contact</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Atelier &amp; Office</span><p class="font-body-md text-body-md text-on-surface-variant">24 Kyoto Walk, Suite 04<br/>Design District, NY 10012</p><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline mt-2">Hours</span><p class="font-body-md text-body-md text-on-surface-variant">Mon - Fri: 9am - 6pm</p></div></div><div class="pt-space-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-space-xs text-on-surface-variant"><span class="font-label-sm text-label-sm tracking-wide">© 2025 Home Studio Architecture &amp; Interiors. All rights reserved.</span><div class="flex items-center gap-space-md"><a class="font-label-sm text-label-sm text-outline hover:text-on-surface transition-colors" href="#">Privacy</a><a class="font-label-sm text-label-sm text-outline hover:text-on-surface transition-colors" href="#">Terms</a></div></div></footer></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-bright/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(28,26,23,0.06)]" data-active-classes="text-secondary"><div class="flex items-center justify-between h-20 px-space-md max-w-lg mx-auto gap-space-xs"><a class="flex-1 h-12 px-space-sm rounded-full bg-primary text-on-primary flex items-center justify-center gap-2 hover:bg-inverse-surface active:scale-95 transition-all shadow-sm" data-path="contact" href="contact.html"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-label-md text-label-md uppercase tracking-wider whitespace-nowrap">Book Consultation</span></a><a aria-label="Call Home Studio" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" href="tel:+18002487883"><span class="material-symbols-outlined text-[20px]">call</span></a><a aria-label="WhatsApp Inquiry" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" href="https://wa.me/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px]">chat</span></a></div></nav></body></html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'inverse-surface': '#31312c', 'inverse-primary': '#cbc5c0', 'secondary-container': '#ffba92', 'on-secondary': '#ffffff', 'primary-fixed': '#e7e1dc', 'error': '#ba1a1a', 'tertiary-fixed': '#ffdcc7', 'on-tertiary': '#ffffff', 'on-tertiary-fixed': '#311300', 'surface-variant': '#e5e2db', 'surface-dim': '#dcdad3', 'on-secondary-container': '#7a4828', 'surface-container-low': '#f6f3ec', 'on-secondary-fixed-variant': '#6a3b1c', 'on-tertiary-container': '#ae7853', 'on-primary': '#ffffff', 'surface-container-highest': '#e5e2db', 'on-error-container': '#93000a', 'tertiary': '#000000', 'secondary-fixed': '#ffdbc8', 'surface-container-high': '#ebe8e1', 'surface-bright': '#fcf9f2', 'surface-container': '#f1eee7', 'on-error': '#ffffff', 'on-primary-container': '#87837f', 'on-primary-fixed': '#1d1b18', 'outline-variant': '#cdc5bc', 'on-surface': '#1c1c18', 'primary-container': '#1d1b18', 'on-background': '#1c1c18', 'outline': '#7c766e', 'background': '#fcf9f2', 'secondary-fixed-dim': '#fcb78f', 'error-container': '#ffdad6', 'on-secondary-fixed': '#321200', 'primary': '#000000', 'surface-container-lowest': '#ffffff', 'surface': '#fcf9f2', 'tertiary-fixed-dim': '#f8b990', 'on-surface-variant': '#4b463f', 'primary-fixed-dim': '#cbc5c0', 'surface-tint': '#615e5a', 'on-primary-fixed-variant': '#494643', 'tertiary-container': '#311300', 'on-tertiary-fixed-variant': '#673c1d', 'secondary': '#865231', 'inverse-on-surface': '#f3f0e9' }, borderRadius: { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, spacing: { 'margin-tablet': '2.5rem', 'gutter-mobile': '1rem', 'gutter': '2rem', 'margin': '4rem', 'space-sm': '0.75rem', 'space-xl': '3.5rem', 'space-md': '1.25rem', 'space-lg': '2rem', 'margin-mobile': '1.25rem', 'space-xs': '0.375rem' }, fontFamily: { 'headline-lg-mobile': ['Playfair Display'], 'title-md': ['Plus Jakarta Sans'], 'headline-md': ['Playfair Display'], 'body-lg': ['Plus Jakarta Sans'], 'display-lg': ['Playfair Display'], 'title-lg': ['Plus Jakarta Sans'], 'display-md-mobile': ['Playfair Display'], 'display-lg-mobile': ['Playfair Display'], 'label-md': ['Plus Jakarta Sans'], 'body-md': ['Plus Jakarta Sans'], 'label-sm': ['Plus Jakarta Sans'], 'headline-lg': ['Playfair Display'], 'display-md': ['Playfair Display'] }, fontSize: { 'headline-lg-mobile': ['26px', { lineHeight: '34px', letterSpacing: '0em', fontWeight: '400' }], 'title-md': ['18px', { lineHeight: '26px', letterSpacing: '0em', fontWeight: '500' }], 'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0em', fontWeight: '500' }], 'body-lg': ['16px', { lineHeight: '26px', letterSpacing: '0.01em', fontWeight: '400' }], 'display-lg': ['64px', { lineHeight: '72px', letterSpacing: '-0.02em', fontWeight: '400' }], 'title-lg': ['20px', { lineHeight: '28px', letterSpacing: '-0.01em', fontWeight: '600' }], 'display-md-mobile': ['32px', { lineHeight: '40px', letterSpacing: '-0.01em', fontWeight: '400' }], 'display-lg-mobile': ['40px', { lineHeight: '48px', letterSpacing: '-0.01em', fontWeight: '400' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.06em', fontWeight: '600' }], 'body-md': ['14px', { lineHeight: '22px', letterSpacing: '0.01em', fontWeight: '400' }], 'label-sm': ['10px', { lineHeight: '14px', letterSpacing: '0.08em', fontWeight: '600' }], 'headline-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.01em', fontWeight: '400' }], 'display-md': ['48px', { lineHeight: '56px', letterSpacing: '-0.015em', fontWeight: '400' }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><button aria-label="Open Studio Menu" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="document.getElementById('mobile-drawer').classList.remove('translate-x-full')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button><img alt="Home Studio Architectural Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W17-XccE24q7oJ2TVNLRjBOR8iizYyMey5uQaDyLw064hTSSHqZfnA0s0KvyzPIz-lxpFr5fnM2oAvANiV1VzJSA8KgL1g7FK8L9HOhAGV3gHWEkrtOclqG6WzM3p3vDE7O0qkf6CiDIHVcB0wDiOJRykK-odxgGAfp8o9pndNAF5e10L61WB_NK4YH01gI_QgaklZpGd4W1GbJHlDT1su_C11xn6coPblbRfUi_2DLwgdh4A6h-_zEL5K"/><span class="font-headline-md text-headline-md tracking-tight text-on-surface ml-1 hidden min-[360px]:inline-block">Home Studio</span></div><div class="flex items-center gap-2"><a class="h-10 px-3.5 rounded-full bg-secondary text-on-secondary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center hover:opacity-95 active:scale-95 transition-all shadow-[0_2px_10px_rgba(134,82,49,0.25)]" data-path="contact" href="contact.html">Get Quote</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><div class="fixed inset-0 z-50 translate-x-full transition-transform duration-300 ease-in-out" id="mobile-drawer"><div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"></div><div class="absolute right-0 top-0 bottom-0 w-5/6 max-w-sm bg-surface-bright pt-safe pb-safe shadow-[0_20px_40px_-8px_rgba(28,26,23,0.15)] flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><span class="font-headline-md text-headline-md text-on-surface">Navigation</span><button class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')" type="button"><span class="material-symbols-outlined text-[24px]">close</span></button></div><div class="px-space-md py-space-sm flex-1 overflow-y-auto flex flex-col gap-space-xs"><a class="flex items-center justify-between py-space-sm px-space-xs text-on-surface hover:text-secondary group transition-colors" data-path="home" href="index.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="font-headline-md text-headline-md">Home</span><span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span></a><a class="flex items-center justify-between py-space-sm px-space-xs text-on-surface hover:text-secondary group transition-colors" data-path="about" href="about.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="font-headline-md text-headline-md">About</span><span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span></a><a class="flex items-center justify-between py-space-sm px-space-xs text-on-surface hover:text-secondary group transition-colors" data-path="services" href="service.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="font-headline-md text-headline-md">Services</span><span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span></a><a class="flex items-center justify-between py-space-sm px-space-xs text-on-surface hover:text-secondary group transition-colors" data-path="projects" href="project.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="font-headline-md text-headline-md">Projects</span><span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span></a><a class="flex items-center justify-between py-space-sm px-space-xs text-on-surface hover:text-secondary group transition-colors" data-path="contact" href="contact.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="font-headline-md text-headline-md">Contact</span><span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span></a><div class="mt-space-md pt-space-md"><a class="w-full h-12 rounded-full bg-secondary text-on-secondary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-space-xs hover:opacity-95 shadow-md" data-path="contact" href="contact.html" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span class="material-symbols-outlined text-[20px]">request_quote</span><span>Get a Quote</span></a></div></div><div class="p-space-md bg-surface-container-low"><p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-1">Inquiries</p><p class="font-body-md text-body-md text-on-surface font-medium">studio@homestudio.design</p><p class="font-body-md text-body-md text-on-surface-variant">+1 (800) 248-7883</p></div></div></div><main class="flex flex-col relative w-full pt-16 bg-surface flex-1"><div class="sr-only">Featured Projects</div><div class="flex flex-col w-full">
+<!-- Editorial Header -->
+<section class="px-margin-mobile pt-6 pb-4 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Architectural Monograph</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-normal tracking-tight">
+      Featured Architectural Portfolios
+    </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md leading-relaxed">
+      A curated curation of residential sanctuaries, penthouses, and bespoke interiors completed across the globe.
+    </p>
+</section>
+<!-- Filter Bar with Badge Pills -->
+<div class="w-full overflow-x-auto no-scrollbar py-2 px-margin-mobile">
+<div class="flex items-center gap-2 min-w-max pb-1" id="filter-container">
+<button class="filter-pill px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md tracking-wider uppercase transition-all shadow-sm flex items-center gap-1.5" data-filter="all" type="button">
+<span>All</span>
+<span class="text-[10px] opacity-75 font-semibold">24</span>
+</button>
+<button class="filter-pill px-4 py-2 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md tracking-wider uppercase transition-all hover:bg-surface-container-highest flex items-center gap-1.5" data-filter="living" type="button">
+<span>Living Rooms</span>
+<span class="text-[10px] text-outline font-semibold">8</span>
+</button>
+<button class="filter-pill px-4 py-2 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md tracking-wider uppercase transition-all hover:bg-surface-container-highest flex items-center gap-1.5" data-filter="bedrooms" type="button">
+<span>Bedrooms</span>
+<span class="text-[10px] text-outline font-semibold">4</span>
+</button>
+<button class="filter-pill px-4 py-2 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md tracking-wider uppercase transition-all hover:bg-surface-container-highest flex items-center gap-1.5" data-filter="kitchens" type="button">
+<span>Kitchens</span>
+<span class="text-[10px] text-outline font-semibold">5</span>
+</button>
+<button class="filter-pill px-4 py-2 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md tracking-wider uppercase transition-all hover:bg-surface-container-highest flex items-center gap-1.5" data-filter="full" type="button">
+<span>Full Home</span>
+<span class="text-[10px] text-outline font-semibold">4</span>
+</button>
+<button class="filter-pill px-4 py-2 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md tracking-wider uppercase transition-all hover:bg-surface-container-highest flex items-center gap-1.5" data-filter="offices" type="button">
+<span>Offices</span>
+<span class="text-[10px] text-outline font-semibold">3</span>
+</button>
+</div>
+</div>
+<!-- Editorial Highlight / Award Banner -->
+<section class="px-margin-mobile mt-4 mb-2">
+<div class="w-full rounded-2xl bg-secondary-container/30 p-4 shadow-sm flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Award of Excellence</span>
+<span class="text-[11px] font-medium text-on-secondary-container">• AD 2024</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-snug">
+          Featured in Architectural Digest &amp; Elle Decor: The Kyoto Pavilion recognized as <span class="italic font-headline-md text-[15px]">Residential Renovation of the Year</span>.
+        </p>
+</div>
+</div>
+</section>
+<!-- Projects Showcase Section -->
+<section class="px-margin-mobile flex flex-col gap-6 mt-4" id="projects-grid">
+<!-- Project 01 -->
+<article class="project-card flex flex-col rounded-2xl overflow-hidden bg-surface-container shadow-sm transition-all" data-category="living">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="High-end Japandi interior showing warm Hinoki cedar pillars, light tatami matting, serene rice paper shoji screens, natural daylight falling on low-profile beige linen sofa, tranquil minimalist zen garden backdrop in Kyoto, editorial architectural photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAofpVOyFEFfbUR2IpoeeHHAiJ6oJJLmWtkMdfRYHup6XAW3PmUFgnnrqaOFdjyhzzxVR-rnWvPqIFvrIO3m-zxsA71w0EPcQrl0JjdAPssz6foUA6sOsiTlb2Jwa-E8m-sYh3ma3cYdz6kAI__gkDWUjNmVH4u-TMO3wOgFfkoDtSWKsbmj7a7w6HbRylN9ZsaGc00rmA3HBiW-njXgwUVK_JWAqwVKB8clCVtpyyVMz5p2gLrzBV4Vw"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-bright/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm uppercase tracking-wide shadow-sm">Living &amp; Tea Lounge</span>
+<span class="px-2 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider">Winner</span>
+</div>
+<button aria-label="Save project to moodboard" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-bright/80 backdrop-blur-md text-on-surface flex items-center justify-center active:scale-90 transition-all shadow-sm" onclick="toggleSave(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<div class="absolute bottom-3 inset-x-3 bg-surface-bright/80 backdrop-blur-md rounded-xl p-2.5 flex items-center justify-between text-on-surface text-label-sm font-label-sm shadow-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">straighten</span> 2,800 sq.ft</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">location_on</span> Kyoto, Japan</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">brush</span> Shoji &amp; Cedar</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">01 / Residential</span>
+<span class="font-label-sm text-label-sm text-outline">Completed 2024</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">The Kyoto Pavilion</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+          An intentional communion between tactile cedar, refined tatami weaving, and floating shoji partitions crafting meditative light diffusion.
+        </p>
+</div>
+</article>
+<!-- Project 02 -->
+<article class="project-card flex flex-col rounded-2xl overflow-hidden bg-surface-container shadow-sm transition-all" data-category="full">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Expansive loft interior in Tribeca New York featuring historic exposed warm patina brick walls, high matte blackened steel industrial window frames, Belgian raw linen furnishings, architectural warm timber flooring, quiet luxury aesthetic, morning sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3GAFSL6zfuEOstHQNtT78U5q5WkvD-K7f0gGCTXUimINJgQYJhdMKAXrIg0Yi-nkXktiD3qhZw0mjvtHyAjsiekv96JRFE3-UWrhzINrYvWjOisCWIygjVM1Ga8O5DOrANM0MccIrxq69VypMmwSiCIrqeTRE_qFYxL3-SGSbcilf2dIatkz_k1TkVE8gG8Ef1_hBUYCmBLBNuPIXbDBAMGDisrGo7tpoCqt8n5sXfGgiQxa2uOC9nA"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-bright/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm uppercase tracking-wide shadow-sm">Full Home Renovation</span>
+</div>
+<button aria-label="Save project to moodboard" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-bright/80 backdrop-blur-md text-on-surface flex items-center justify-center active:scale-90 transition-all shadow-sm" onclick="toggleSave(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<div class="absolute bottom-3 inset-x-3 bg-surface-bright/80 backdrop-blur-md rounded-xl p-2.5 flex items-center justify-between text-on-surface text-label-sm font-label-sm shadow-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">straighten</span> 3,400 sq.ft</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">location_on</span> New York, NY</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">palette</span> Steel &amp; Brick</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">02 / Loft Sanctuary</span>
+<span class="font-label-sm text-label-sm text-outline">Completed 2024</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Tribeca Warehouse Loft</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+          Industrial heritage tempered by warm, tactile linen wall drapery, sculpted blackened steel joinery, and reclaimed timber flooring.
+        </p>
+</div>
+</article>
+<!-- Project 03 -->
+<article class="project-card flex flex-col rounded-2xl overflow-hidden bg-surface-container shadow-sm transition-all" data-category="kitchens">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Bespoke luxury kitchen island sculpted from honed Calacatta gold marble, paired with fluted dark American walnut cabinetry, brass recessed handles, Mediterranean architectural sunlight streaming through sheer drapery, Costa Brava Spain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuButQqsyOlvXtVwh-cLgKYZTbL-JSO8kwTocKq2PVzgKGVmMF-1Io_UScebGFcNGQdpbHxW0wDGvQMc8MpSpIGRC2x2BRKuLKhQYCpA0SRVByTPbJq6z-ptC_TRDcqy4bNfMN1ocKQ4GpylHlvsvNvv-zsFFlkUDvz2Y5Q7XF9mUzPxhgN8UIHGHSGc6IcItN02Dkg845ZT6sHz7SuD01ySMUFcc0ifKoCZ6o1OPeEscNyywBVNfdi37w"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-bright/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm uppercase tracking-wide shadow-sm">Modular Kitchen &amp; Dining</span>
+</div>
+<button aria-label="Save project to moodboard" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-bright/80 backdrop-blur-md text-on-surface flex items-center justify-center active:scale-90 transition-all shadow-sm" onclick="toggleSave(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<div class="absolute bottom-3 inset-x-3 bg-surface-bright/80 backdrop-blur-md rounded-xl p-2.5 flex items-center justify-between text-on-surface text-label-sm font-label-sm shadow-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">straighten</span> 1,900 sq.ft</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">location_on</span> Costa Brava, ES</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">soup_kitchen</span> Marble Island</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">03 / Culinary Architecture</span>
+<span class="font-label-sm text-label-sm text-outline">Completed 2023</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Villa Solstice</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+          Monolithic Calacatta stone kitchen island paired with fluted solid walnut cabinets, engineered for effortless culinary flow.
+        </p>
+</div>
+</article>
+<!-- Project 04 -->
+<article class="project-card flex flex-col rounded-2xl overflow-hidden bg-surface-container shadow-sm transition-all" data-category="bedrooms">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Elegant master bedroom suite in Kensington London with hand-painted raw silk wallcovering in muted sand tones, brushed brass structural wardrobe details, tailored velvet headboard, softly illuminated bedside sconce, calming sanctuary mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCezjT7OBcrCkSbvipL7QySlp9FWOyfN1_jXZSs1YitUiPm_JMj9O1lmbyudfIOxIImAB5UNxzUOAfcmofNd04XnkduzBcrZPQOBPIP6GZoA0PkOiZJczIHg-D06anjjYNixfOacovx4_wTvvoSpJDkcR6IOog3_16woALbrbwCRcvyq3W3LLZW6g0c_9e791h5WnvHFqkbpbkErAABJsjcvcD1RCHlv6g_1XlkFVKPzxOkAWUVMEEeKQ"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-bright/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm uppercase tracking-wide shadow-sm">Master Bedroom &amp; Wardrobe</span>
+</div>
+<button aria-label="Save project to moodboard" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-bright/80 backdrop-blur-md text-on-surface flex items-center justify-center active:scale-90 transition-all shadow-sm" onclick="toggleSave(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<div class="absolute bottom-3 inset-x-3 bg-surface-bright/80 backdrop-blur-md rounded-xl p-2.5 flex items-center justify-between text-on-surface text-label-sm font-label-sm shadow-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">straighten</span> 1,200 sq.ft</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">location_on</span> London, UK</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">bed</span> Silk &amp; Brass</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">04 / Private Quarters</span>
+<span class="font-label-sm text-label-sm text-outline">Completed 2024</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Kensington Residence</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+          An acoustic cocoon wrapped in natural textured silk wallpapers, hand-brushed patinated brass and integrated ambient warm sconces.
+        </p>
+</div>
+</article>
+<!-- Project 05 -->
+<article class="project-card flex flex-col rounded-2xl overflow-hidden bg-surface-container shadow-sm transition-all" data-category="full">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Scandinavian luxury penthouse in Copenhagen featuring pale Danish ash wood millwork, warm limewashed textured walls, suspended sculptural bio-ethanol fireplace hearth, panoramic floor to ceiling glass overlooking harbor, soft neutral palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6HX-KGjHEXamkgYIj471_Qul_7ESBk_yrq32r34bQzm9eGWccwAENHcdaJ_AizO-BIW9nODg3MvAga26GCN7lzPPzr2-r3L_hvx83fAnipwU5j6FZI6XfVzNZIF5NeSpFcytYkOnV1Jvp6LbTYMCorL25Ybp1lWfqxEZTPtB3vTr33vmzUj8HIkrq1fwItiFzQujq4aoh_W6N288lnx9lEbtpmLToZ4TimJ4VNFdUm2K1-H8A25NQqA"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-bright/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm uppercase tracking-wide shadow-sm">Full Penthouse</span>
+</div>
+<button aria-label="Save project to moodboard" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-bright/80 backdrop-blur-md text-on-surface flex items-center justify-center active:scale-90 transition-all shadow-sm" onclick="toggleSave(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<div class="absolute bottom-3 inset-x-3 bg-surface-bright/80 backdrop-blur-md rounded-xl p-2.5 flex items-center justify-between text-on-surface text-label-sm font-label-sm shadow-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">straighten</span> 2,200 sq.ft</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">location_on</span> Copenhagen, DK</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">fireplace</span> Ash &amp; Limewash</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">05 / Sky Residence</span>
+<span class="font-label-sm text-label-sm text-outline">Completed 2023</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Nordic Haven</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+          Airy Nordic minimalism complemented by raw limewash wall treatments and a central sculptural hearth anchored in pale ash carpentry.
+        </p>
+</div>
+</article>
+<!-- Project 06 -->
+<article class="project-card flex flex-col rounded-2xl overflow-hidden bg-surface-container shadow-sm transition-all" data-category="offices">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Refined executive workspace in Zurich with custom saddled leather desk, acoustic architectural wool felt panels, subtle warm indirect LED illumination, floor to ceiling glass overlooking Lake Zurich, modern executive study design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHY49c3grucQCo_PnHrYFgBH-0DM_463umzNqNzpefm3IEr-hn5vxfJI7znPNDjZchHKlRu-qmhJ8uz2wTgCBTBa8_kOK2EoW7nkcD3oNvyKaLIzMVkWidggP-pT1gSmbZYlIm0CX-cUjEjwLNEG_lr5ynhqs6_lm2SJFEAec4MElnedZC6nJIwQtBB26P9ma1QBSwcO70E8RuNBqyP4nnGOtaOmXFdUyVCQxiWS503uuuNMO1Kitktg"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-bright/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm uppercase tracking-wide shadow-sm">Executive Office</span>
+</div>
+<button aria-label="Save project to moodboard" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-bright/80 backdrop-blur-md text-on-surface flex items-center justify-center active:scale-90 transition-all shadow-sm" onclick="toggleSave(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<div class="absolute bottom-3 inset-x-3 bg-surface-bright/80 backdrop-blur-md rounded-xl p-2.5 flex items-center justify-between text-on-surface text-label-sm font-label-sm shadow-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">straighten</span> 1,400 sq.ft</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">location_on</span> Zurich, CH</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">desk</span> Acoustic Felt</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">06 / Workspace</span>
+<span class="font-label-sm text-label-sm text-outline">Completed 2024</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Aethelgard Studio</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+          Bespoke high-performance workspace combining sound-dampening acoustic felt baffles, harness leather desks, and unobstructed horizon views.
+        </p>
+</div>
+</article>
+<!-- Project 07 -->
+<article class="project-card flex flex-col rounded-2xl overflow-hidden bg-surface-container shadow-sm transition-all" data-category="living">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Monolithic Cycladic curved interior living space in Santorini Greece, organic carved plaster walls, whitewashed limestone floors, warm terracotta vessels, sunken seating lounge with natural woven linens, golden hour sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHTahOTIYk2MmLBi7jGoYvwF_CuuEMYuLF5cWPKXLoVyQM4GO0ZGnWpVSQSPldqjoz9FWVtxAu541_2hNGvaPIltcJzzvzooklqPJRuUEDGpzXF6RB8iYZ90qaKkxFDAwcEXaC09xq6JurEs-hVxE0uqAo48DUH4VhzZ953GIS4fiUUGk6O8TmUbA3SyVvzS4xL3wh-SNWGU2VfVtSUkvqVRORMrxC0NspIuVyd753afPEfZJ6JZDQ4w"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-bright/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm uppercase tracking-wide shadow-sm">Summer Living Sanctuary</span>
+</div>
+<button aria-label="Save project to moodboard" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-bright/80 backdrop-blur-md text-on-surface flex items-center justify-center active:scale-90 transition-all shadow-sm" onclick="toggleSave(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<div class="absolute bottom-3 inset-x-3 bg-surface-bright/80 backdrop-blur-md rounded-xl p-2.5 flex items-center justify-between text-on-surface text-label-sm font-label-sm shadow-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">straighten</span> 2,600 sq.ft</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">location_on</span> Santorini, GR</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">waves</span> Curved Plaster</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">07 / Coastal Villa</span>
+<span class="font-label-sm text-label-sm text-outline">Completed 2023</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Santorini Cliff House</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+          Organic hand-troweled plaster forms seamless living alcoves, framing Aegean sea breezes through sculpted monolithic portals.
+        </p>
+</div>
+</article>
+<!-- Project 08 -->
+<article class="project-card flex flex-col rounded-2xl overflow-hidden bg-surface-container shadow-sm transition-all" data-category="kitchens">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Dramatic modernist kitchen and temperature-controlled architectural wine display in Bel Air California, dark matte obsidian panels, illuminated backlit Cristallo quartzite countertops, patinated bronze finishes, warm ambient luxury lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT9D4zl1NEQe-57T96d-JO3u0XgVIFC6sqUYd59cuc19U7g7o-HXYP4x5vrUfTMQ4sRM-9aReWpBihxjBV5p3vRyF7auXNxmaFtW3_1eO3cYgfO9B3UDLRp2gWJu4LJAYlsRe7yRnzhEG4ofy52g1ib_tyTdlTKcKQKP0qKNU60tqQ-7xQvGU2jWsd3hnPjWAqpBcSrCPe0Q4rtzwxdfyavOR2_g6Tg_EQU8G6P96rw5RxXHI4FWP-mg"/>
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-bright/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm uppercase tracking-wide shadow-sm">Kitchen &amp; Wine Room</span>
+</div>
+<button aria-label="Save project to moodboard" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-bright/80 backdrop-blur-md text-on-surface flex items-center justify-center active:scale-90 transition-all shadow-sm" onclick="toggleSave(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+<div class="absolute bottom-3 inset-x-3 bg-surface-bright/80 backdrop-blur-md rounded-xl p-2.5 flex items-center justify-between text-on-surface text-label-sm font-label-sm shadow-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">straighten</span> 3,800 sq.ft</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">location_on</span> Los Angeles, CA</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">wine_bar</span> Quartzite Bar</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">08 / Modernist Estate</span>
+<span class="font-label-sm text-label-sm text-outline">Completed 2024</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Bel Air Modernist Retreat</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+          An opulent culinary stage anchoring matte volcanic obsidian cabinetry with a luminous, vein-matched Cristallo quartzite cantilever.
+        </p>
+</div>
+</article>
+</section>
+<!-- Interactive Project Stats Bar -->
+<section class="px-margin-mobile mt-8">
+<div class="w-full bg-surface-container-high rounded-2xl p-4 grid grid-cols-3 gap-2 text-center">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-secondary font-bold">100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Custom Built</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-secondary font-bold">24+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Awards Won</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-secondary font-bold">12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Countries</span>
+</div>
+</div>
+</section>
+<!-- Start Your Project CTA Section -->
+<section class="px-margin-mobile mt-8 mb-4">
+<div class="relative w-full rounded-2xl overflow-hidden bg-primary p-6 text-on-primary shadow-lg flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container">Begin Dialogue</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile font-normal leading-tight">
+          Inspired by our projects?
+        </h3>
+<p class="font-body-md text-body-md text-surface-container-highest/80 leading-relaxed">
+          Let us curate your vision and sculpt a cohesive spatial floorplan designed for your lifestyle.
+        </p>
+</div>
+<div class="flex flex-col gap-2.5 pt-2">
+<a class="w-full h-12 rounded-full bg-secondary text-on-secondary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-95 active:scale-95 transition-all shadow-md" data-path="contact" href="contact.html">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+<span>Start Your Project Inquiry</span>
+</a>
+<a class="w-full h-12 rounded-full bg-surface-container-high/20 backdrop-blur-md text-on-primary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-surface-container-high/30 active:scale-95 transition-all" data-path="lookbook" href="project.html">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+<span>Browse Lookbook (PDF)</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple micro-interaction for bookmarking projects
+  function toggleSave(btn) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon.textContent === 'bookmark_border') {
+      icon.textContent = 'bookmark';
+      icon.style.fontVariationSettings = "'FILL' 1";
+      btn.classList.add('text-secondary');
+    } else {
+      icon.textContent = 'bookmark_border';
+      icon.style.fontVariationSettings = "'FILL' 0";
+      btn.classList.remove('text-secondary');
+    }
+  }
+
+  // Interactive Category Filter Script
+  document.querySelectorAll('.filter-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      // Toggle button styles
+      document.querySelectorAll('.filter-pill').forEach(p => {
+        p.classList.remove('bg-primary', 'text-on-primary');
+        p.classList.add('bg-surface-container-high', 'text-on-surface');
+      });
+      pill.classList.remove('bg-surface-container-high', 'text-on-surface');
+      pill.classList.add('bg-primary', 'text-on-primary');
+
+      const filter = pill.getAttribute('data-filter');
+      const cards = document.querySelectorAll('.project-card');
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script><footer class="w-full bg-surface-container-low mt-space-xl px-margin-mobile pt-space-lg pb-32 text-on-surface flex flex-col gap-space-md"><div class="flex flex-col gap-space-xs"><span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Home Studio</span><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-sm">A spatial design practice converging warm Scandinavian functionalism and Japanese wabi-sabi minimalism for elevated living.</p></div><div class="grid grid-cols-2 gap-space-md py-space-sm"><div class="flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Studio Pages</span><a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" data-path="home" href="index.html">Home</a><a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" data-path="about" href="about.html">About Us</a><a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" data-path="services" href="service.html">Services</a><a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" data-path="projects" href="project.html">Projects</a><a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors" data-path="contact" href="contact.html">Contact</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Atelier &amp; Office</span><p class="font-body-md text-body-md text-on-surface-variant">24 Kyoto Walk, Suite 04<br/>Design District, NY 10012</p><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline mt-2">Hours</span><p class="font-body-md text-body-md text-on-surface-variant">Mon - Fri: 9am - 6pm</p></div></div><div class="pt-space-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-space-xs text-on-surface-variant"><span class="font-label-sm text-label-sm tracking-wide">© 2025 Home Studio Architecture &amp; Interiors. All rights reserved.</span><div class="flex items-center gap-space-md"><a class="font-label-sm text-label-sm text-outline hover:text-on-surface transition-colors" href="#">Privacy</a><a class="font-label-sm text-label-sm text-outline hover:text-on-surface transition-colors" href="#">Terms</a></div></div></footer></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-bright/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(28,26,23,0.06)]" data-active-classes="text-secondary"><div class="flex items-center justify-between h-20 px-space-md max-w-lg mx-auto gap-space-xs"><a class="flex-1 h-12 px-space-sm rounded-full bg-primary text-on-primary flex items-center justify-center gap-2 hover:bg-inverse-surface active:scale-95 transition-all shadow-sm" data-path="contact" href="contact.html"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-label-md text-label-md uppercase tracking-wider whitespace-nowrap">Book Consultation</span></a><a aria-label="Call Home Studio" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" href="tel:+18002487883"><span class="material-symbols-outlined text-[20px]">call</span></a><a aria-label="WhatsApp Inquiry" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" href="https://wa.me/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px]">chat</span></a></div></nav></body></html>
